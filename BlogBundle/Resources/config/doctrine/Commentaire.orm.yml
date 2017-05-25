@@ -1,0 +1,37 @@
+BlogBundle\Entity\Commentaire:
+    type: entity
+    table: null
+    repositoryClass: BlogBundle\Repository\CommentaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        contenu:
+            type: string
+            length: '511'
+        note:
+            type: smallint
+        creationdt:
+            type: datetime
+        modifdt:
+            type: datetime
+
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: commentaires
+
+    oneToMany:
+        signalements:
+            targetEntity: SignalementCom
+            mappedBy: commentaire
+
+    manyToOne:
+        article:
+            targetEntity: Article
+            inversedBy: commentaires
+
+    lifecycleCallbacks: {  }

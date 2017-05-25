@@ -25,10 +25,30 @@ BlogBundle\Entity\User:
         mail:
             type: string
             length: '50'
-            
+
     manyToMany:
         roles:
             targetEntity: Role
             inversedBy: users
+
+    oneToMany:
+        articles:
+            targetEntity: Article
+            mappedBy: user
+
+    oneToMany:
+        commentaires:
+            targetEntity: Commentaire
+            mappedBy: user
+
+    oneToMany:
+        signalements_com:
+            targetEntity: SignalementCom
+            mappedBy: user
+
+    oneToMany:
+        signalements_art:
+            targetEntity: SignalementArt
+            mappedBy: user
 
     lifecycleCallbacks: {  }

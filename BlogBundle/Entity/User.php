@@ -2,10 +2,12 @@
 
 namespace BlogBundle\Entity;
 
+use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * User
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @var int
@@ -212,5 +214,76 @@ class User
     public function getRoles()
     {
         return $this->roles;
+    }
+
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials(){}
+
+        /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized);
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $articles;
+
+
+    /**
+     * Add article
+     *
+     * @param \BlogBundle\Entity\Article $article
+     *
+     * @return User
+     */
+    public function addArticle(\BlogBundle\Entity\Article $article)
+    {
+        $this->articles[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param \BlogBundle\Entity\Article $article
+     */
+    public function removeArticle(\BlogBundle\Entity\Article $article)
+    {
+        $this->articles->removeElement($article);
+    }
+
+    /**
+     * Get articles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArticles()
+    {
+        return $this->articles;
     }
 }

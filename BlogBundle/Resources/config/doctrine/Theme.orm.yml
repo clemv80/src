@@ -1,7 +1,7 @@
-BlogBundle\Entity\Role:
+BlogBundle\Entity\Theme:
     type: entity
     table: null
-    repositoryClass: BlogBundle\Repository\RoleRepository
+    repositoryClass: BlogBundle\Repository\ThemeRepository
     id:
         id:
             type: integer
@@ -9,14 +9,14 @@ BlogBundle\Entity\Role:
             generator:
                 strategy: AUTO
     fields:
-        role:
+        theme:
             type: string
-            length: '15'
+            length: 255
             unique: true
 
     manyToMany:
-        users:
-            targetEntity: User
-            mappedBy: roles
+        articles:
+            targetEntity: Article
+            mappedBy: themes
 
     lifecycleCallbacks: {  }

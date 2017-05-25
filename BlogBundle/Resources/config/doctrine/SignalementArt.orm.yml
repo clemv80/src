@@ -1,0 +1,25 @@
+BlogBundle\Entity\SignalementArt:
+    type: entity
+    table: null
+    repositoryClass: BlogBundle\Repository\SignalementArtRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        creationdt:
+            type: datetime
+
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: signalements_art
+
+    manyToOne:
+        article:
+            targetEntity: Article
+            inversedBy: signalements
+
+    lifecycleCallbacks: {  }
