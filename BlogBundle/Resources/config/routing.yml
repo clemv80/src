@@ -1,3 +1,43 @@
+blog_article:
+    resource: "@BlogBundle/Resources/config/routing/article.yml"
+    prefix:   /article
+
+blog_commentaire:
+    resource: "@BlogBundle/Resources/config/routing/commentaire.yml"
+    prefix:   /commentaire
+
+blog_role:
+    resource: "@BlogBundle/Resources/config/routing/role.yml"
+    prefix:   /role
+
+blog_signalementart:
+    resource: "@BlogBundle/Resources/config/routing/signalementart.yml"
+    prefix:   /signalementart
+
+blog_signalementcom:
+    resource: "@BlogBundle/Resources/config/routing/signalementcom.yml"
+    prefix:   /signalementcom
+
+blog_theme:
+    resource: "@BlogBundle/Resources/config/routing/theme.yml"
+    prefix:   /theme
+
+blog_user:
+    resource: "@BlogBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+login:
+    path:    /login
+    defaults:  { _controller: BlogBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: logout
+    
+
 blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Default:index }
+

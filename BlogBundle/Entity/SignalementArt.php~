@@ -80,4 +80,33 @@ class SignalementArt
     {
         return $this->user;
     }
+    /**
+     * @var \BlogBundle\Entity\Article
+     */
+    private $article;
+
+
+    /**
+     * Set article
+     *
+     * @param \BlogBundle\Entity\Article $article
+     *
+     * @return SignalementArt
+     */
+    public function setArticle(\BlogBundle\Entity\Article $article = null)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \BlogBundle\Entity\Article
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
 }

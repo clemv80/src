@@ -80,4 +80,33 @@ class SignalementCom
     {
         return $this->user;
     }
+    /**
+     * @var \BlogBundle\Entity\Commentaire
+     */
+    private $commentaire;
+
+
+    /**
+     * Set commentaire
+     *
+     * @param \BlogBundle\Entity\Commentaire $commentaire
+     *
+     * @return SignalementCom
+     */
+    public function setCommentaire(\BlogBundle\Entity\Commentaire $commentaire = null)
+    {
+        $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Get commentaire
+     *
+     * @return \BlogBundle\Entity\Commentaire
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
+    }
 }

@@ -1,0 +1,24 @@
+signalementart_index:
+    path:     /
+    defaults: { _controller: "BlogBundle:SignalementArt:index" }
+    methods:  GET
+
+signalementart_show:
+    path:     /{id}/show
+    defaults: { _controller: "BlogBundle:SignalementArt:show" }
+    methods:  GET
+
+signalementart_new:
+    path:     /new
+    defaults: { _controller: "BlogBundle:SignalementArt:new" }
+    methods:  [GET, POST]
+
+signalementart_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BlogBundle:SignalementArt:edit" }
+    methods:  [GET, POST]
+
+signalementart_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BlogBundle:SignalementArt:delete" }
+    methods:  DELETE
