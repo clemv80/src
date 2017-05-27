@@ -16,8 +16,6 @@ BlogBundle\Entity\SignalementCom:
         user:
             targetEntity: User
             inversedBy: signalements_com
-
-    manyToOne:
         commentaire:
             targetEntity: Commentaire
             inversedBy: signalements

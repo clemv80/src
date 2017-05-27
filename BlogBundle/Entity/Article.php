@@ -282,4 +282,43 @@ class Article
     {
         return $this->soustitre;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $signalements;
+
+
+    /**
+     * Add signalement
+     *
+     * @param \BlogBundle\Entity\SignalementArt $signalement
+     *
+     * @return Article
+     */
+    public function addSignalement(\BlogBundle\Entity\SignalementArt $signalement)
+    {
+        $this->signalements[] = $signalement;
+
+        return $this;
+    }
+
+    /**
+     * Remove signalement
+     *
+     * @param \BlogBundle\Entity\SignalementArt $signalement
+     */
+    public function removeSignalement(\BlogBundle\Entity\SignalementArt $signalement)
+    {
+        $this->signalements->removeElement($signalement);
+    }
+
+    /**
+     * Get signalements
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSignalements()
+    {
+        return $this->signalements;
+    }
 }

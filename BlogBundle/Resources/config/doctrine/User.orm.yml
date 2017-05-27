@@ -35,18 +35,12 @@ BlogBundle\Entity\User:
         articles:
             targetEntity: Article
             mappedBy: user
-
-    oneToMany:
         commentaires:
             targetEntity: Commentaire
             mappedBy: user
-
-    oneToMany:
         signalements_com:
             targetEntity: SignalementCom
             mappedBy: user
-
-    oneToMany:
         signalements_art:
             targetEntity: SignalementArt
             mappedBy: user

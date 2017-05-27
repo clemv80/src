@@ -16,8 +16,6 @@ BlogBundle\Entity\SignalementArt:
         user:
             targetEntity: User
             inversedBy: signalements_art
-
-    manyToOne:
         article:
             targetEntity: Article
             inversedBy: signalements

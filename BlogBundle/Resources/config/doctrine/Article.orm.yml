@@ -29,8 +29,6 @@ BlogBundle\Entity\Article:
         commentaires:
             targetEntity: Commentaire
             mappedBy: article
-
-    oneToMany:
         signalements:
             targetEntity: SignalementArt
             mappedBy: article

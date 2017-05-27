@@ -286,4 +286,121 @@ class User implements UserInterface, \Serializable
     {
         return $this->articles;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $commentaires;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $signalements_com;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $signalements_art;
+
+
+    /**
+     * Add commentaire
+     *
+     * @param \BlogBundle\Entity\Commentaire $commentaire
+     *
+     * @return User
+     */
+    public function addCommentaire(\BlogBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires[] = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Remove commentaire
+     *
+     * @param \BlogBundle\Entity\Commentaire $commentaire
+     */
+    public function removeCommentaire(\BlogBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires->removeElement($commentaire);
+    }
+
+    /**
+     * Get commentaires
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
+    }
+
+    /**
+     * Add signalementsCom
+     *
+     * @param \BlogBundle\Entity\SignalementCom $signalementsCom
+     *
+     * @return User
+     */
+    public function addSignalementsCom(\BlogBundle\Entity\SignalementCom $signalementsCom)
+    {
+        $this->signalements_com[] = $signalementsCom;
+
+        return $this;
+    }
+
+    /**
+     * Remove signalementsCom
+     *
+     * @param \BlogBundle\Entity\SignalementCom $signalementsCom
+     */
+    public function removeSignalementsCom(\BlogBundle\Entity\SignalementCom $signalementsCom)
+    {
+        $this->signalements_com->removeElement($signalementsCom);
+    }
+
+    /**
+     * Get signalementsCom
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSignalementsCom()
+    {
+        return $this->signalements_com;
+    }
+
+    /**
+     * Add signalementsArt
+     *
+     * @param \BlogBundle\Entity\SignalementArt $signalementsArt
+     *
+     * @return User
+     */
+    public function addSignalementsArt(\BlogBundle\Entity\SignalementArt $signalementsArt)
+    {
+        $this->signalements_art[] = $signalementsArt;
+
+        return $this;
+    }
+
+    /**
+     * Remove signalementsArt
+     *
+     * @param \BlogBundle\Entity\SignalementArt $signalementsArt
+     */
+    public function removeSignalementsArt(\BlogBundle\Entity\SignalementArt $signalementsArt)
+    {
+        $this->signalements_art->removeElement($signalementsArt);
+    }
+
+    /**
+     * Get signalementsArt
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSignalementsArt()
+    {
+        return $this->signalements_art;
+    }
 }

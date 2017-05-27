@@ -18,12 +18,7 @@ BlogBundle\Entity\Commentaire:
             type: datetime
         modifdt:
             type: datetime
-
-    manyToOne:
-        user:
-            targetEntity: User
-            inversedBy: commentaires
-
+        
     oneToMany:
         signalements:
             targetEntity: SignalementCom
@@ -33,5 +28,9 @@ BlogBundle\Entity\Commentaire:
         article:
             targetEntity: Article
             inversedBy: commentaires
+        user:   
+            targetEntity: User
+            inversedBy: commentaires
+
 
     lifecycleCallbacks: {  }
