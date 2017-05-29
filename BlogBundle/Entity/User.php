@@ -213,7 +213,7 @@ class User implements UserInterface, \Serializable
      */
     public function getRoles()
     {
-        return $this->roles;
+        return $this->roles->toArray();
     }
 
 
@@ -404,7 +404,7 @@ class User implements UserInterface, \Serializable
         return $this->signalements_art;
     }
 
-    public function ___toString(){
+    public function __toString(){
         return "";
     }
 }

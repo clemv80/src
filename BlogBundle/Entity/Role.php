@@ -2,10 +2,12 @@
 
 namespace BlogBundle\Entity;
 
+use Symfony\Component\Security\Core\Role\RoleInterface;
+
 /**
  * Role
  */
-class Role
+class Role implements RoleInterface
 {
     /**
      * @var int
@@ -98,7 +100,7 @@ class Role
         return $this->users;
     }
 
-    public function ___toString(){
+    public function __toString(){
         return "";
     }
 }
