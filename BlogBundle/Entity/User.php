@@ -403,4 +403,8 @@ class User implements UserInterface, \Serializable
     {
         return $this->signalements_art;
     }
+
+    public function ___toString(){
+        return "";
+    }
 }

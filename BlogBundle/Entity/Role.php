@@ -97,4 +97,8 @@ class Role
     {
         return $this->users;
     }
+
+    public function ___toString(){
+        return "";
+    }
 }
