@@ -101,6 +101,7 @@ class Role implements RoleInterface
     }
 
     public function __toString(){
-        return "";
+        
+        return $this->getRole();  
     }
 }
