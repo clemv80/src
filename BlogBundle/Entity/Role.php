@@ -104,4 +104,33 @@ class Role implements RoleInterface
         
         return $this->getRole();  
     }
+    /**
+     * @var string
+     */
+    private $libelle;
+
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     *
+     * @return Role
+     */
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Get libelle
+     *
+     * @return string
+     */
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
 }

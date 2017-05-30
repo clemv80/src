@@ -14,6 +14,10 @@ BlogBundle\Entity\Role:
             length: '15'
             unique: true
 
+        libelle:
+            type: string
+            length: '15'
+
     manyToMany:
         users:
             targetEntity: User
